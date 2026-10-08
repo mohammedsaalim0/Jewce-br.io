@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BR / CR Election Guide ✡️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#fff;
+    background:
+        radial-gradient(circle at 50% -10%, #2865b8 0%, transparent 35%),
+        linear-gradient(180deg,#031a3d,#001027 55%,#020816);
+    overflow-x:hidden;
+}
+
+/* ================================
+   STAR BACKGROUND
+================================ */
+
+body::before{
+    content:"✡     ✡     ✡     ✡     ✡";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    color:rgba(255,215,0,.045);
+    font-size:80px;
+    line-height:180px;
+    word-spacing:80px;
+    pointer-events:none;
+    z-index:-1;
+    transform:rotate(-12deg) scale(1.2);
+}
+
+/* Floating stars */
+
+.star{
+    position:fixed;
+    color:#ffd700;
+    opacity:.45;
+    animation:floatStar 6s infinite ease-in-out;
+    pointer-events:none;
+}
+
+.s1{top:15%;left:8%;font-size:25px;}
+.s2{top:30%;right:10%;font-size:18px;animation-delay:1s;}
+.s3{top:65%;left:15%;font-size:20px;animation-delay:2s;}
+.s4{top:75%;right:18%;font-size:28px;animation-delay:3s;}
+
+@keyframes floatStar{
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+    50%{
+        transform:translateY(-25px) rotate(20deg);
+    }
+}
+
+/* ================================
+   NAVBAR
+================================ */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 7%;
+
+    background:rgba(0,17,43,.85);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,215,0,.35);
+}
+
+.logo{
+    color:#ffd700;
+    font-weight:1000;
+    font-size:1.25rem;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#fff;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    margin-left:28px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#ffd700;
+}
+
+/* ================================
+   HERO
+================================ */
+
+.hero{
+    min-height:92vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    padding:70px 20px;
+}
+
+.hero-content{
+    max-width:1000px;
+}
+
+/* Star of David */
+
+.magen{
+    width:115px;
+    height:115px;
+
+    margin:0 auto 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:82px;
+    color:#ffd700;
+
+    filter:
+        drop-shadow(0 0 12px rgba(255,215,0,.45))
+        drop-shadow(0 0 35px rgba(255,215,0,.15));
+
+    animation:
+        rotateStar 12s linear infinite,
+        glowStar 2s ease-in-out infinite alternate;
+}
+
+@keyframes rotateStar{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+@keyframes glowStar{
+    from{filter:drop-shadow(0 0 8px #ffd700);}
+    to{filter:drop-shadow(0 0 30px #ffd700);}
+}
+
+.kicker{
+    display:inline-block;
+
+    padding:9px 20px;
+    margin-bottom:25px;
+
+    border:1px solid #ffd700;
+    border-radius:999px;
+
+    color:#ffd700;
+    background:rgba(255,215,0,.08);
+
+    font-size:.85rem;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+h1{
+    font-size:clamp(3.5rem,9vw,7.5rem);
+    line-height:.9;
+
+    font-weight:1000;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ffd700,
+            #ffffff,
+            #ffd700
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:goldMove 5s linear infinite;
+}
+
+@keyframes goldMove{
+    to{
+        background-position:300%;
+    }
+}
+
+.hero-sub{
+    margin:35px auto;
+
+    max-width:700px;
+
+    color:#cbd8ec;
+
+    font-size:1.15rem;
+    line-height:1.7;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:16px 27px;
+    border-radius:12px;
+
+    font-weight:900;
+
+    transition:.3s;
+}
+
+.primary{
+    background:#ffd700;
+    color:#001027;
+}
+
+.primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 40px rgba(255,215,0,.35);
+}
+
+.secondary{
+    border:1px solid #ffd700;
+    color:#ffd700;
+}
+
+.secondary:hover{
+    background:#ffd700;
+    color:#001027;
+}
+
+/* ================================
+   SECTION
+================================ */
+
+section{
+    padding:100px 7%;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-heading .symbol{
+    color:#ffd700;
+    font-size:35px;
+}
+
+.section-heading h2{
+    font-size:clamp(2.2rem,5vw,4rem);
+    color:#fff;
+    margin:10px 0;
+}
+
+.section-heading h2 span{
+    color:#ffd700;
+}
+
+.section-heading p{
+    color:#8fa5c5;
+}
+
+/* ================================
+   RULE CARDS
+================================ */
+
+.rules{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.rule{
+    position:relative;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.08),
+            rgba(255,215,0,.025)
+        );
+
+    border:1px solid rgba(255,215,0,.22);
+
+    backdrop-filter:blur(15px);
+
+    transition:.4s;
+
+    overflow:hidden;
+}
+
+.rule::before{
+    content:"✡";
+    position:absolute;
+
+    top:-35px;
+    right:-25px;
+
+    font-size:130px;
+
+    color:rgba(255,215,0,.035);
+}
+
+.rule:hover{
+    transform:translateY(-12px);
+
+    border-color:#ffd700;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.3),
+        0 0 30px rgba(255,215,0,.08);
+}
+
+.rule-number{
+    width:65px;
+    height:65px;
+
+    margin:0 auto 22px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#ffd700;
+    color:#001027;
+
+    font-size:1.5rem;
+    font-weight:1000;
+
+    box-shadow:0 0 25px rgba(255,215,0,.2);
+}
+
+.rule h3{
+    font-size:1.3rem;
+    margin-bottom:10px;
+}
+
+.rule p{
+    color:#9eafc8;
+    line-height:1.6;
+}
+
+/* ================================
+   TIPS
+================================ */
+
+.tips-section{
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(255,215,0,.025),
+            transparent
+        );
+}
+
+.tip-grid{
+    max-width:900px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+}
+
+.tip{
+    position:relative;
+
+    aspect-ratio:1/1;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    border-radius:22px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,215,0,.13),
+            rgba(255,255,255,.035)
+        );
+
+    border:1px solid rgba(255,215,0,.3);
+
+    color:#ffd700;
+
+    transition:.4s;
+
+    overflow:hidden;
+}
+
+.tip::before{
+    content:"✡";
+
+    position:absolute;
+
+    font-size:100px;
+
+    color:rgba(255,215,0,.035);
+
+    transform:rotate(15deg);
+}
+
+.tip-number{
+    position:absolute;
+
+    top:12px;
+    left:15px;
+
+    color:white;
+
+    font-weight:1000;
+}
+
+.play{
+    width:65px;
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#ffd700;
+
+    color:#001027;
+
+    font-size:25px;
+
+    padding-left:4px;
+
+    z-index:2;
+
+    transition:.3s;
+}
+
+.tip:hover{
+    transform:
+        translateY(-10px)
+        scale(1.04);
+
+    border-color:#ffd700;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35),
+        0 0 35px rgba(255,215,0,.15);
+}
+
+.tip:hover .play{
+    transform:scale(1.15);
+}
+
+/* ================================
+   BONUS
+================================ */
+
+.bonus{
+    text-align:center;
+
+    padding:120px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,215,0,.12),
+            transparent 55%
+        );
+}
+
+.bonus-symbol{
+    font-size:65px;
+    color:#ffd700;
+
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.12);
+    }
+}
+
+.bonus h2{
+    margin:20px 0 15px;
+
+    font-size:clamp(2.5rem,6vw,5rem);
+
+    color:#ffd700;
+}
+
+.bonus p{
+    color:#9eafc8;
+    margin-bottom:35px;
+}
+
+.bonus-button{
+    display:inline-block;
+
+    padding:21px 42px;
+
+    color:#001027;
+
+    text-decoration:none;
+
+    font-weight:1000;
+    font-size:1.1rem;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffd700,
+            #fff4a3,
+            #ffd700
+        );
+
+    background-size:200%;
+
+    animation:
+        bonusGlow 1.5s infinite alternate,
+        moveGradient 3s linear infinite;
+
+    transition:.3s;
+}
+
+.bonus-button:hover{
+    transform:scale(1.1) rotate(-2deg);
+}
+
+@keyframes bonusGlow{
+    from{
+        box-shadow:0 0 10px rgba(255,215,0,.3);
+    }
+    to{
+        box-shadow:
+            0 0 45px rgba(255,215,0,.6),
+            0 0 90px rgba(255,215,0,.15);
+    }
+}
+
+@keyframes moveGradient{
+    to{
+        background-position:200%;
+    }
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer{
+    text-align:center;
+
+    padding:35px 20px;
+
+    color:#657994;
+
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+footer .gold{
+    color:#ffd700;
+    font-weight:bold;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .rules{
+        grid-template-columns:1fr;
+    }
+
+    .tip-grid{
+        grid-template-columns:repeat(2,1fr);
+        max-width:500px;
+    }
+
+    .tip:last-child{
+        grid-column:span 2;
+        width:50%;
+        margin:auto;
+    }
+
+}
+
+@media(max-width:450px){
+
+    .tip-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tip:last-child{
+        grid-column:auto;
+        width:100%;
+    }
+
+    h1{
+        font-size:4rem;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- Floating Jewish/cultural decorative symbols -->
+<div class="star s1">✡</div>
+<div class="star s2">✡</div>
+<div class="star s3">✡</div>
+<div class="star s4">✡</div>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        ✡ BR / CR <span>2026</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#rules">RULES</a>
+        <a href="#tips">TIPS</a>
+        <a href="#bonus">BONUS</a>
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="magen">
+            ✡
+        </div>
+
+        <div class="kicker">
+            THE OFFICIAL ELECTION SURVIVAL GUIDE
+        </div>
+
+        <h1>
+            BR<br>
+            /<br>
+            CR
+        </h1>
+
+        <p class="hero-sub">
+            Welcome to the sacred battlefield of campus democracy.
+            Prepare yourself. Gather your supporters.
+            And may your campaign survive until election day.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#rules" class="btn primary">
+                ✡ CHECK THE RULES
+            </a>
+
+            <a href="#tips" class="btn secondary">
+                WATCH THE TIPS
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- RULES -->
+
+<section id="rules">
+
+    <div class="section-heading">
+
+        <div class="symbol">✡</div>
+
+        <h2>
+            Candidate <span>Rules</span>
+        </h2>
+
+        <p>
+            The ancient laws of becoming a BR / CR candidate.
+        </p>
+
+    </div>
+
+
+    <div class="rules">
+
+        <div class="rule">
+
+            <div class="rule-number">
+                01
+            </div>
+
+            <h3>
+                MUST BE HUMAN
+            </h3>
+
+            <p>
+                Artificial intelligence,
+                robots and suspiciously advanced
+                calculators are not eligible.
+            </p>
+
+        </div>
+
+
+        <div class="rule">
+
+            <div class="rule-number">
+                02
+            </div>
+
+            <h3>
+                MUST BE ALIVE
+            </h3>
+
+            <p>
+                Candidates must currently
+                be participating in the
+                physical realm.
+            </p>
+
+        </div>
+
+
+        <div class="rule">
+
+            <div class="rule-number">
+                03
+            </div>
+
+            <h3>
+                SHOULD HAVE HANDS
+            </h3>
+
+            <p>
+                Because apparently you'll need
+                them to vote.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TIPS -->
+
+<section id="tips" class="tips-section">
+
+    <div class="section-heading">
+
+        <div class="symbol">✡</div>
+
+        <h2>
+            5 <span>Tips</span>
+        </h2>
+
+    </div>
+
+
+    <!-- ONLY VIDEO LINKS -->
+
+    <div class="tip-grid">
+
+        <a
+            class="tip"
+            href="https://www.instagram.com/reel/DeKhF6qSMDF/?psln=MTg1YW93YjR4Njkw"
+            target="_blank">
+
+            <span class="tip-number">01</span>
+
+            <span class="play">
+                ▶
+            </span>
+
+        </a>
+
+
+        <a
+            class="tip"
+            href="https://www.instagram.com/p/BwNNHWMCzaL/?exln=ZjN3dXFjaXQwZm9y"
+            target="_blank">
+
+            <span class="tip-number">02</span>
+
+            <span class="play">
+                ▶
+            </span>
+
+        </a>
+
+
+        <a
+            class="tip"
+            href="https://www.instagram.com/p/CQpJy4iqXGe/?psln=MWx4aXJqcThpYXRpOQ=="
+            target="_blank">
+
+            <span class="tip-number">03</span>
+
+            <span class="play">
+                ▶
+            </span>
+
+        </a>
+
+
+        <a
+            class="tip"
+            href="https://www.instagram.com/reel/DUv87wXDoP6/?xtok=MXQ1YTA3ejJ0YTJlcA=="
+            target="_blank">
+
+            <span class="tip-number">04</span>
+
+            <span class="play">
+                ▶
+            </span>
+
+        </a>
+
+
+        <a
+            class="tip"
+            href="https://www.instagram.com/p/DWcBSPzk_XI/?dlrf=OTJwMnFmc2I4cm9z"
+            target="_blank">
+
+            <span class="tip-number">05</span>
+
+            <span class="play">
+                ▶
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- BONUS -->
+
+<section id="bonus" class="bonus">
+
+    <div class="bonus-symbol">
+        ✡
+    </div>
+
+    <h2>
+        BONUS
+    </h2>
+
+    <p>
+        You have reached the final level.
+    </p>
+
+    <a
+        class="bonus-button"
+        href="https://www.instagram.com/reel/Db2l3Z2DQCo/?srtk=anUzNHo5d3hhdHB2"
+        target="_blank"
+        onclick="confetti()">
+
+        ✡ OPEN THE SECRET ✡
+
+    </a>
+
+</section>
+
+
+<footer>
+
+    ✡ <span class="gold">BR / CR ELECTIONS</span> ✡
+
+    <br><br>
+
+    Built for campus election chaos.
+
+</footer>
+
+
+<script>
+
+/* BONUS CONFETTI */
+
+function confetti(){
+
+    for(let i=0;i<100;i++){
+
+        const piece=document.createElement("div");
+
+        piece.style.position="fixed";
+        piece.style.left=Math.random()*100+"vw";
+        piece.style.top="-20px";
+
+        piece.style.width="8px";
+        piece.style.height="8px";
+
+        piece.style.background=
+            Math.random()>0.5
+            ? "#ffd700"
+            : "#ffffff";
+
+        piece.style.zIndex="99999";
+
+        piece.style.borderRadius=
+            Math.random()>0.5
+            ? "50%"
+            : "2px";
+
+        document.body.appendChild(piece);
+
+        const duration=1000+Math.random()*2500;
+
+        piece.animate(
+            [
+                {
+                    transform:"translateY(0) rotate(0)"
+                },
+                {
+                    transform:
+                    "translateY(110vh) rotate(900deg)"
+                }
+            ],
+            {
+                duration:duration,
+                easing:"cubic-bezier(.2,.7,.3,1)"
+            }
+        );
+
+        setTimeout(()=>{
+            piece.remove();
+        },duration);
+
+    }
+
+}
+
+</script>
+
+</body>
+          </html>
